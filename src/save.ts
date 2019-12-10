@@ -65,7 +65,7 @@ async function run(): Promise<void> {
         core.debug(`Tar Path: ${tarPath}`);
         await exec(`"${tarPath}"`, args);
 
-        const fileSizeLimit = 400 * 1024 * 1024; // 400MB
+        const fileSizeLimit = 80000 * 1024 * 1024; // 80GB
         const archiveFileSize = utils.getArchiveFileSize(archivePath);
         core.debug(`File Size: ${archiveFileSize}`);
         if (archiveFileSize > fileSizeLimit) {
